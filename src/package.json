@@ -1,0 +1,28 @@
+{
+  "name": "wetube",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --exec babel-node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/El-labo/wetube-reloaded.git"
+  },
+  "author": "jcwrubu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/El-labo/wetube-reloaded/issues"
+  },
+  "homepage": "https://github.com/El-labo/wetube-reloaded#readme",
+  "dependencies": {
+    "express": "^4.21.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.8",
+    "@babel/node": "^7.25.7",
+    "@babel/preset-env": "^7.25.8",
+    "nodemon": "^3.1.7"
+  }
+}
