@@ -1,5 +1,9 @@
-extends base.pug
+extends base
+include mixins/video
+
 block content 
     h2 hello, here is new trending videos.
-    input(placeholder = "What's your name")
-    button Send
+    each video in videos
+        +videoComponent(video)
+    else
+        li Sorry, nothing found
