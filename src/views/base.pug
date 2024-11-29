@@ -1,29 +1,20 @@
+include mixins/message
+
 doctype html
 html(lang = "ko")
     head
-        link(rel="stylesheet" href="https://unpkg.com/mvp.css")
+        link(rel="stylesheet" href="/assets/css/styles.css")
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css")
         title #{pageTitle} | Wetube
     body
-        header
-            h1=pageTitle
-        nav 
-            ul 
-                li 
-                    a(href="/") Home
-                li 
-                    a(href="/videos/upload") Upload Video
-                li
-                    a(href="/search") Search 
-                if loggedIn
-                    li 
-                        a(href="/logout") Logout
-                    li 
-                        a(href="/my-profile") #{loggedInUser.name}의 profile
-                else
-                    li 
-                        a(href="/join") Join
-                    li 
-                        a(href="/login") Login
+        if messages.error 
+            +message("error", messages.error)
+        if messages.info 
+            +message("error", messages.info)
+        if messages.success 
+            +message("error", messages.success)
+        include partials/header.pug
         main    
             block content
         include partials/footer.pug
+    block scripts

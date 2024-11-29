@@ -1,9 +1,19 @@
 extends base
 block content 
+    div.upload__container
+        div.upload__video
+            video#preview
+            button#actionBtn.social__btn Start Recoding
     if errorMessage
         span=errorMessage
-    form(method ="POST")
+    form(method ="POST", enctype="multipart/form-data")
+        label(for="video") Video File 
+        input(type="file", accept="video/*", required, id="video", name="video")
+        label(for="thumb") Thumbnail File 
+        input(type="file", accept="image/*", required, id="thumb", name="thumb")
         input(name = "title", placeholder="Title", required, type="text", maxLength= 80 )
         input(name = "description", placeholder="Description", required, type="text", minLength=10, maxLength= 140)
         input(name = "hashtags", placeholder="Hashtags, seperated by comma", required, type="text")
         input(type="submit", value="Upload video")
+block scripts 
+        script(src='/assets/js/recorder.js')
